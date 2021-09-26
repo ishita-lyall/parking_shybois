@@ -5,7 +5,9 @@
   <title>index page</title>
 
   <link rel="stylesheet" href="page1.css">
-  <script src="firebase.js"></script>
+  <script src="login.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
 
 </head>
 
@@ -36,9 +38,9 @@
         <a href="findspot.html">
         <button type="button">FIND PARKING SPOT</button>
       </a>
-        <a href="listspot.html">
-        <button type="button" class="btn-2">LIST YOUR SPOT</button>
-      </a>
+        
+        <button type="button" onclick="checker()" class="btn-2">LIST YOUR SPOT</button>
+      
       </div>
       </div>
     </div>

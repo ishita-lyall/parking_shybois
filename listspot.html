@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>list your spot</title>
     <link rel="stylesheet" href="listspot.css">
+    <script src="listspot.js"></script>
 
     <style>
         body {font-family: Arial, Helvetica, sans-serif;}
@@ -57,33 +58,56 @@
         <div class="address">
           <label> Please enter your address:<br /></label>
           <input type="text">
+          <button onclick="getLocation()" id="lat_id" class="coord_btn">Get Coords</button>
+          <p id="demo"></p>
+          <script>
+            var x = document.getElementById("demo");
+            
+            function getLocation() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              } else { 
+                x.innerHTML = "Geolocation is not supported by this browser.";
+              }
+            }
+            
+            function showPosition(position) {
+              x.innerHTML = "Latitude: " + position.coords.latitude + 
+              "<br>Longitude: " + position.coords.longitude;
+            }
+
+            export {showPosition}
+            </script>
+            
         </div>
-        <div class="spots">
+        <div class="spots" id="spots_id">
             <label><br> Total number of parking spots<br /></label>
             <input type="number">
         </div>
-        <div class="currency">
-            <label><br> Currency<br /></label>
+        <div class="area" id="area_id">
+            <label><br> Area<br /></label>
             <select class="ui search dropdown">
-                <option value="">Please select local currency</option>
-                <option value="CD">(CD) Canadian dollar</option>
-                <option value="EU">(EUR) Euro</option>
+
+                <option value="RE">Residential</option>
+                <option value="CO">commercial</option>
                 </select>
         </div>
         <div class="spot_type">
-            <label><br> Spot type<br /></label>
+            <label><br> vehicle type<br /></label>
             <select class="ui search dropdown">
-                <option value="">Spot type</option>
-                <option value="">Private driveway</option>
-                <option value="">Private garage</option>
-                <option value="">Private field</option>
+
+                <option value="">car</option>
+                <option value="">scooter</option>
+
                 </select>
         </div>
         </textarea>
+
 
     <input type="submit" value="Submit">
       </div>
       
 </body>
+
 
 </html>

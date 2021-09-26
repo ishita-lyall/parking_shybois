@@ -1,3 +1,4 @@
+// import showPosition from '../parking/listspot.html'
 var firebaseConfig = {
     apiKey: "AIzaSyCqEHCURjJNlcKNgNms_mVrTp6uNcDO41E",
     authDomain: "parking-shybois.firebaseapp.com",
@@ -8,8 +9,11 @@ var firebaseConfig = {
     measurementId: "G-7MLR29NEE1"
 };
 // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
-
+var lant;
+var long;
 async function signIn() {
     await firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
@@ -25,7 +29,7 @@ async function signIn() {
                     localStorage.setItem("currentUser", uid);
                    
                     alert("Signed In successfully")
-                    location.replace("main.html")
+                    location.replace("page1.html")
                     console.log(user.email)
                 }
             }
@@ -60,3 +64,28 @@ async function signUp() {
         }
     
 }
+
+async function checker() {
+    await firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    location.replace("listspot.html")
+      
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+    lant=position.coords.latitude;
+    long=position.coords.longitude;
+  }
+
+async function uploadspot() {
+    var area = document.getElementById("area_id")
+    var spots = document.getElementById("spots_id")
+    showPosition();
+    db.collection("parking").add({
+        first: "Ada",
+        last: "Lovelace",
+        born: 1815
+    })
+}
+
