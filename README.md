@@ -16,5 +16,20 @@ Find parking spots in your community that are available near you. Our parking ap
 3. Your parking spot is reserved for you and you’ll no longer have to worry about parking tickets
 4. Rent parking that you can afford and the location you need.
 
-## Why us?
-What makes our project unique is that we have also incorporated hardware which checks in the parked cars in real-time and handles their safety.
+## Website Screenshots
+
+![Home Page](https://github.com/ishita-lyall/parking_shybois/blob/master/screenshots/homepage.png)
+*The Home Page*
+
+![Find spot](https://github.com/ishita-lyall/parking_shybois/blob/master/screenshots/findspot.png)
+*Find a Parking Spot Near You*
+
+![List Spot](https://github.com/ishita-lyall/parking_shybois/blob/master/screenshots/listspot.png)
+*List Your Parking Spot as Available on Our Website*
+
+![login](https://github.com/ishita-lyall/parking_shybois/blob/master/screenshots/login.png)
+*The Login Page*
+
+![Signup](https://github.com/ishita-lyall/parking_shybois/blob/master/screenshots/signup.png)
+*The Signup Page*
+
